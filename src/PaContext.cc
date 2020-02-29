@@ -165,8 +165,8 @@ bool PaContext::getErrStr(std::string& errStr, bool isInput) {
   std::shared_ptr<streampunk::AudioOptions> options = isInput ? mInOptions : mOutOptions;
   if (options->closeOnError()) // propagate the error back to the stream handler
     errStr = mErrStr;
-  else if (mErrStr.length())
-    printf("AudioIO: %s\n", mErrStr.c_str());
+  // else if (mErrStr.length())
+  //   printf("AudioIO: %s\n", mErrStr.c_str());
   mErrStr.clear();
   return !errStr.empty();
 }
